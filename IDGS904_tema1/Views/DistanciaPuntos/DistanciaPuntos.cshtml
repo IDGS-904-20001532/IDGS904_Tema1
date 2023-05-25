@@ -1,0 +1,35 @@
+﻿@model IDGS904_tema1.Models.CalcularPuntos
+
+@{
+    ViewBag.Title = "DistanciaPuntos";
+}
+<h2>Calcular Distancia Entre Dos Puntos</h2>
+<div class="container">
+    <div class="row div col-lg-6">
+        <form action="/" method="POST">
+            <div class="row">
+                <div class="col-6">
+                    <label for="x1">Ingresa X1:</label>
+                    <input type="number" name="x1" value="" />
+                    <br />
+                    <label for="x2">Ingresa X2:</label>
+                    <input type="number" name="x2" value="" />
+                </div>
+                <div class="col-6">
+                    <label for="y1">Ingresa Y1:</label>
+                    <input type="number" name="y1" value="" />
+                    <br />
+                    <label for="y2">Ingresa Y2:</label>
+                    <input type="number" name="y2" value="" />
+                    <br /><br />
+                </div>
+                <input type="submit" name="cal" value="calcular" />
+            </div>
+        </form>
+    </div>
+    <!--<div class="row div col-lg-6">
+        <h1>El resultado es: @Html.DisplayFor(model => Model.Res)</h1>
+    </div>-->
+</div>
+
+

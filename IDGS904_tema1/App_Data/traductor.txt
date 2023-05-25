@@ -1,0 +1,5 @@
+Hola,Hello
+Azul,Blue
+Puerta,Door
+Rojo,Red
+Pelota,Ball

@@ -1,0 +1,51 @@
+﻿@model IDGS904_tema1.Models.Traductor
+@{
+    ViewBag.Title = "TraducirPalabras";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Traductor</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label>Ingresa la palabra a Traducir:</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Ingles, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Ingles, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Selecciona la opción que se va ha traducir: </label>
+                        <div class="col-md-10 form-check">
+                            @Html.RadioButtonFor(model => model.Option, 1)@Html.Label("Convertir a Ingles ")
+                            <br />
+                            @Html.RadioButtonFor(model => model.Option, 2)@Html.Label("Convertir a Español")<br />
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Traducir" class="btn btn-outline-info" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-6 text-center">
+            <h4>El resultado de la Traducción</h4>
+            <h6>
+                <span class="rounded-pill"> @Html.DisplayFor(model => Model.Resultado)</span>
+            </h6>
+        </div>
+    </div>
+</div>
+
